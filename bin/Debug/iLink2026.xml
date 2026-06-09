@@ -1,0 +1,88 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+iLink2026
+</name>
+</assembly>
+<members>
+<member name="T:iLink2026.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:iLink2026.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:iLink2026.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:iLink2026.clsEval">
+ <summary>
+ Class to evaluate generic arithmetic / boolean expressions
+ Written to parse iLink rules
+ </summary>
+</member>
+<member name="M:iLink2026.clsEval.Evaluate(System.String)">
+ <summary>
+ Evaluates the expression and returns the result.
+ </summary>
+ <param name="sExpression">算术/布尔表达式（支持 AND/OR/NOT、四则运算、括号）</param>
+ <returns>计算结果（布尔结果：1=真，0=假；算术结果=具体数值）</returns>
+ <exception cref="T:System.Exception">表达式解析错误时抛出</exception>
+</member>
+<member name="M:iLink2026.clsEval.InfixToPostfix(System.String,System.String@)">
+ <summary>
+ Converts an infix expression to a postfix expression
+ that contains exactly one space following each token.
+ </summary>
+ <param name="sExpression">中缀表达式</param>
+ <param name="sBuffer">输出：后缀表达式（空格分隔）</param>
+ <returns>错误位置（0=无错误）</returns>
+</member>
+<member name="M:iLink2026.clsEval.GetPrecedence(System.String)">
+ <summary>
+ Returns a number that indicates the relative precedence of an operator.
+ </summary>
+ <param name="ch">运算符</param>
+ <returns>优先级数值（越大优先级越高）</returns>
+</member>
+<member name="M:iLink2026.clsEval.DoEvaluate(System.String)">
+ <summary>
+ Evaluates the given postfix expression and returns the result.
+ </summary>
+ <param name="sExpression">后缀表达式（空格分隔）</param>
+ <returns>计算结果</returns>
+ <exception cref="T:System.Exception">无效运算符/栈异常时抛出</exception>
+</member>
+<member name="M:iLink2026.mdlMain.getHigestPriorityFailcode(System.String[],System.String[])">
+ <summary>
+ Given the ordered list of failcodes and priorities it will return
+ the most appropriate failcode (highest priority match)
+ </summary>
+ <param name="sFailcodeArray">待匹配的失败码数组</param>
+ <param name="sPriorityArray">按优先级排序的规则数组（高优先级在前）</param>
+ <returns>匹配到的最高优先级失败码（无匹配返回空字符串）</returns>
+</member>
+<member name="M:iLink2026.mdlMain.updOverallFailcode(System.String,System.String)">
+ <summary>
+ Set the overall failcode in the iLink database to the new setfailcode
+ </summary>
+ <param name="PenID">笔ID</param>
+ <param name="Failcode">要更新的整体失败码</param>
+ <returns>更新是否成功（True=成功，False=失败）</returns>
+</member>
+<member name="M:iLink2026.mdlMain.setOverallFailmode(System.String[])">
+ <summary>
+ Determine the overall failmode for a given pen id
+ </summary>
+ <param name="PenIDs">笔ID数组</param>
+ <returns>包含每支笔整体失败码的 PenResult 数组</returns>
+</member>
+</members>
+</doc>

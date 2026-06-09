@@ -1,0 +1,58 @@
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.usermd
+*.usertasks
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Xx]64/
+[Xx]86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bbin/
+bin/
+obj/
+Log/
+Logs/
+
+## Visual Studio cache and tooling
+.vs/
+htmlCharMap.cache
+EnhancedSerializer.cache
+BaseIntermediateOutputPath/
+BenchmarkDotNet.Artifacts/
+obj/
+Artifactory/
+
+## Backup folders with timestamp
+Backup*/
+_UpgradeReport_Files/
+UpgradeLog*.XML
+UpgradeLog*.htm
+ServiceSummary*.html
+
+## Windows image caches
+Thumbs.db
+ehthumbs.db
+
+## Folder caches
+Desktop.ini
+
+## ClickOnce directory
+publish/
+
+## Publish Web output
+*.Publish.xml
+*.pubxml
+*.pubxml.user
+
+## NuGet Packages
+*.nupkg
+# Include mqlist profile classifation if needed, otherwise ignore packages folder
+packages/
+!packages/repositories.config
